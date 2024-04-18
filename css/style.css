@@ -169,7 +169,7 @@ h3, h4 {
 
 
 
-@media screen and (max-width: 1110px) {
+@media screen and (min-width: 1110px) {
 	#header {
 		height: 100%;
 		background-color: #0d0d0d;
