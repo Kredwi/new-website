@@ -169,7 +169,65 @@ h3, h4 {
 
 
 
-
+@media screen and (max-width: 1110px) {
+	#header {
+		height: 100%;
+		background-color: #0d0d0d;
+		padding: 0.2%;
+		margin: 0.2%;
+	}
+	#header #zagovolok h2,
+	#header #zagovolok h3 {
+		font-family: arial;
+		font-weight: 600;
+		padding: 0;
+		margin: 0;
+	}
+	#header #zagovolok h2 {
+		font-size: 1.6vw;
+	}
+	#header #zagovolok h3 {
+		font-size: 1.2vw;
+	}
+	#main #slogan h1 {
+		font-size: 4vw;
+	}
+	#main #slogan h2 {
+		font-size: 1.5vw;
+	}
+	#bio {
+		padding-left: 20vw;
+		padding-right: 20vw;
+	}
+	#bio h3 {
+		font-size: 1.8vw;
+	}
+	#bio p {
+		font-size: 1.6vw;
+	}
+	#statsBox::before {
+		content: "";
+		height: 14vw;
+		width: 10vw;
+	}
+	#statsBox::after {
+		content: "";
+		height: 10vw;
+		width: 26vw;
+	}
+	#statsBox h3 {
+		font-size: 1.8vw;
+	}
+	#statsBox p {
+		font-size: 1.6vw;
+	}
+	#links li a {
+		font-size: 2.6vw;
+	}
+	#footer blockquote {
+		font-size: 1.3vw;
+	}
+}
 @media screen and (max-width: 400px) {
   	#header #zagovolok h2 {
   		text-align: center;
