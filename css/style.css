@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+body {
+	color: #828282;
+	background-color: #141414;
+	padding: 0;
+	margin: 0;
+}
+hr {
+	border-color: gray;
+}
+ul {
+	list-style-type: none;
+}
+h1 {
+	color: white;
+  	font-family: "Rubik Doodle Shadow", system-ui;
+}
+h2 {
+	color: white;
+}
+h3, h4 {
+	color: orange;
+}
+
+#header {
+	height: 100%;
+	background-color: #0d0d0d;
+	padding: 0.2%;
+	margin: 0.2%;
+}
+#header #zagovolok h2,
+#header #zagovolok h3 {
+	font-family: arial;
+	font-weight: 600;
+	padding: 0;
+	margin: 0;
+}
+#header #zagovolok h3 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+  	text-transform: lowercase;
+	padding: 0;
+	margin: 0;
+}
+#main #slogan h1,
+#main #slogan h2 {
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+#main #slogan {
+	padding-top: 1%;
+}
+#main #slogan h1 {
+	font-size: 40px;
+}
+#main #slogan h2 {
+	color: gray;
+	font-size: 16px;
+  	font-family: arial;
+  	font-style: italic;
+  	font-weight: 550;
+  	text-transform: lowercase;
+}
+
+#bio {
+	text-align: center;
+	padding-left: 20vw;
+	padding-right: 20vw;
+}
+#bio h3 {
+	font-family: arial;
+	padding: 0;
+	margin: 0;
+}
+#bio p {
+	font-family: 'Roboto', sans-serif;
+	padding: 0;
+	margin: 0;
+}
+#statsBox {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+#statsBox::before {
+	content: "";
+	background-image: url(../img/kredwispeed.png);
+	height: 180px;
+	width: 123px;
+  position: absolute;
+  left: 20px;
+  background-position: center;
+	background-size: 99%;
+	opacity: 0.8;
+  z-index: -1;
+}
+#statsBox::after {
+	content: "";
+	background-image: url(../img/32323.png);
+	height: 140px;
+	width: 400px;
+  position: absolute;
+  right: 20px;
+  background-position: center;
+	background-size: 80%;
+	opacity: 0.2;
+  z-index: -1;
+}
+#statsBox li {
+	border-left: 2px solid #1c1b1b;
+	padding-left: 2%;
+	margin-right: 2%;
+	text-decoration: none;
+}
+#statsBox h3 {
+	font-family: 'Open Sans', sans-serif;
+}
+#statsBox p {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: -1px;
+}
+#statsBox .statResult {
+	color: orange;
+	font-family: arial;
+}
+#statsBox li:first-child {
+  border-left: 0;
+}
+#links {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+#links ul {
+	padding: 0;
+	margin: 0;
+}
+#links li {
+	display: inline;
+}
+#links li a {
+	font-size: 26px;
+	color: white;
+}
+#footer blockquote {
+	text-align: center;
+	font-family: Bad Script;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 400px) {
+  	#header #zagovolok h2 {
+  		text-align: center;
+    	font-size: 5.5vw;
+  	}
+  	#header #zagovolok h3 {
+		text-align: center;
+    	font-size: 4.7vw;
+  	}
+  	#main #slogan h1 {
+		font-size: 9vw;
+	}
+	#main #slogan h2 {
+		color: gray;
+		font-size: 6vw;
+	  	font-family: arial;
+	  	text-transform: lowercase;
+	}
+	#bio {
+		padding-left: 5vw;
+		padding-right: 5vw;
+	}
+	#bio h3 {
+		font-size: 6vw;
+	}
+	#bio p {
+		font-size: 5vw;
+	}
+	#statsBox {
+		text-align: center;
+		display: block;
+		padding: 0;
+		margin: 0;
+		height: 50%;
+	}
+	#statsBox li {
+		border-left: none;
+		padding-left: 0;
+		margin-right: 0;
+	}
+	#statsBox li h3 {
+		font-size: 7vw;
+		padding: 0;
+		margin: 0;
+	}
+	#statsBox li p {
+		font-size: 6.4vw;
+		padding: 0;
+		margin: 0;
+	}
+	#links li a {
+		font-size: 6vw;
+	}
+	#footer blockquote {
+		padding: 0;
+		margin: 0;
+		font-size: 4vw;
+	}
+}
+@media screen and (max-width: 251px) {
+	#header #zagovolok h2 {
+		font-size: 6vw;
+	}
+	#header #zagovolok h3 {
+		font-size: 5vw;
+	}
+    #main #slogan h1 {
+		font-size: 8vw;
+	}
+	#main #slogan h2 {
+		color: gray;
+		font-size: 5vw;
+	  	font-family: arial;
+	  	text-transform: lowercase;
+	}
+}
+@media screen and (max-width: 590px) {
+	#statsBox::before {
+		content: "";
+		display: none;
+	}
+	#statsBox::after {
+		content: "";
+		display: none;
+	}
+}
