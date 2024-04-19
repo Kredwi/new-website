@@ -137,6 +137,18 @@ h3, h4 {
 	justify-content: center;
 	align-items: center;
 }
+#videos-block::before {
+	content: "";
+	background-image: url(../img/tractor.png);
+	height: 245px;
+	width: 245px;
+	transform: scaleX(-1);
+  position: absolute;
+  left: 4px;
+  background-position: center;
+	background-size: 100%;
+  z-index: -1;
+}
 .video-name {
 	font-family: arial;
 	padding: 3px;
@@ -155,6 +167,7 @@ h3, h4 {
 #videos-block #video-1,
 #videos-block #video-2,
 #videos-block #video-3 {
+	background-color: #141414;
 	width: 240px;
 	border: 2px solid #1c1b1b;
 	padding: 2px;
@@ -263,6 +276,10 @@ h3, h4 {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+	#videos-block::before {
+		height: 18vw;
+		width: 18vw;
 	}
 	.video-name {
 		font-size: 1.5vw;
@@ -434,6 +451,10 @@ h3, h4 {
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+	}
+	#videos-block::before {
+		content: "";
+		display: none;
 	}
 	.video-name {
 		font-family: arial;
