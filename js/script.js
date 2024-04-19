@@ -43,3 +43,24 @@ function replaceCSS(u) {
 	document.head.appendChild(newCSS);
 	currentCSS.parentNode.removeChild(currentCSS);
 }
+function redirect(e) {
+	const url = {
+		channel: "https://www.youtube.com/channel/UCH-f_szwD2msRXhwMmePeiA",
+		video1: "",
+		video2: "",
+		video3: ""
+	}
+	switch (e) {
+	case 1:
+		window.location.href = url.channel;
+		break;
+	case 2:
+		window.location.href = url.channel;
+		break;
+	case 3:
+		window.location.href = url.channel;
+		break;
+	default:
+		throw new Error("Error rederection");
+	}
+}
