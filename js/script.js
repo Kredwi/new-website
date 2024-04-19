@@ -9,7 +9,7 @@
 	// restoreInfo("githubFollowing", github?.following);
 	const videoDescription = document.getElementsByClassName("video-description");
 	Array.from(videoDescription).forEach((element) => {
-		const text = truncateText(element.innerText, 230);
+		const text = truncateText(element.innerText, 180);
 		element.innerHTML = text;
 	})
 	const videoName = document.getElementsByClassName("video-name");
