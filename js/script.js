@@ -1,13 +1,13 @@
 "use strict";
-// (async () => {
-// 	const discord = await fetchData("https://discord.com/api/guilds/766538286214283265/widget.json");
-// 	restoreInfo("discordMembers", discord?.members?.length);
-// 	restoreInfo("discordChannels", discord?.channels?.length);
-// 	const github = await fetchData("https://api.github.com/users/kredwi");
-// 	restoreInfo("githubRepos", github?.public_repos);
-// 	restoreInfo("githubFollowing", github?.followers);
-// 	restoreInfo("githubFollowing", github?.following);
-// })();
+(async () => {
+	const discord = await fetchData("https://discord.com/api/guilds/766538286214283265/widget.json");
+	restoreInfo("discordMembers", discord?.members?.length);
+	restoreInfo("discordChannels", discord?.channels?.length);
+	// const github = await fetchData("https://api.github.com/users/kredwi");
+	// restoreInfo("githubRepos", github?.public_repos);
+	// restoreInfo("githubFollowing", github?.followers);
+	// restoreInfo("githubFollowing", github?.following);
+})();
 const adaptiveClick = document.getElementById("enb");
 adaptiveClick.addEventListener("click", () => {
 	return;
