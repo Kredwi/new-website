@@ -94,11 +94,12 @@ h3, h4 {
 	height: 180px;
 	width: 123px;
   position: absolute;
-  left: 20px;
+  left: -200px;
   background-position: center;
 	background-size: 99%;
 	opacity: 0.8;
   z-index: -1;
+  animation: kredwi-speed 1s forwards;
 }
 #statsBox::after {
 	content: "";
@@ -111,6 +112,7 @@ h3, h4 {
 	background-size: 80%;
 	opacity: 0.2;
   z-index: -1;
+  animation: uzor-move 6s infinite alternate;
 }
 #statsBox li {
 	border-left: 2px solid #1c1b1b;
@@ -144,10 +146,11 @@ h3, h4 {
 	width: 245px;
 	transform: scaleX(-1);
   position: absolute;
-  left: 4px;
+  left: -200px;
   background-position: center;
 	background-size: 100%;
   z-index: -1;
+	animation: tractor-slide 2s forwards;
 }
 .video-name {
 	font-family: arial;
@@ -227,13 +230,6 @@ h3, h4 {
 		padding: 0.2%;
 		margin: 0.2%;
 	}
-	#header #zagovolok h2,
-	#header #zagovolok h3 {
-		font-family: arial;
-		font-weight: 600;
-		padding: 0;
-		margin: 0;
-	}
 	#header #zagovolok h2 {
 		font-size: 1.6vw;
 	}
@@ -295,16 +291,10 @@ h3, h4 {
 	}
 	.video-description {
 		font-size: 1.3vw;
-		font-family: 'Montserrat', sans-serif;
-	  letter-spacing: -1px;
 	}
 	.video-check {
 		display: inline-block;
 		font-size: 1.3vw;
-		font-family: arial;
-		color: gray;
-		border: 2px solid #2b2b2e;
-		background-color: #252625;
 	}
 	#videos-block #video-1,
 	#videos-block #video-2,
@@ -431,10 +421,7 @@ h3, h4 {
 		font-size: 8vw;
 	}
 	#main #slogan h2 {
-		color: gray;
 		font-size: 5vw;
-	  	font-family: arial;
-	  	text-transform: lowercase;
 	}
 }
 @media screen and (max-width: 784px) {
@@ -456,27 +443,39 @@ h3, h4 {
 		content: "";
 		display: none;
 	}
-	.video-name {
-		font-family: arial;
-		padding: 3px;
-		margin: 0;
-	}
 	.video-preview {
 		height: auto;
 		width: 80vw;
 		vertical-align: middle;
-		margin-right: 10px;
-	}
-	.video-description {
-	  font-family: 'Montserrat', sans-serif;
-	  letter-spacing: -1px;
 	}
 	#videos-block #video-1,
 	#videos-block #video-2,
 	#videos-block #video-3 {
 		width: 80vw;
-		border: 2px solid #1c1b1b;
-		padding: 2px;
-		margin: 3px;
+	}
+}
+
+
+
+
+@keyframes tractor-slide {
+	from {
+    left: -200px;
+	} to {
+		left: 4px;
+	}
+}
+@keyframes kredwi-speed {
+	from {
+    left: -200px;
+	} to {
+		left: 20px;
+	}
+}
+@keyframes uzor-move {
+	from {
+		opacity: 0.2;
+	} to {
+		opacity: 0.3;
 	}
 }
