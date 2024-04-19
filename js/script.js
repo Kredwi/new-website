@@ -7,18 +7,6 @@
 	// restoreInfo("githubRepos", github?.public_repos);
 	// restoreInfo("githubFollowing", github?.followers);
 	// restoreInfo("githubFollowing", github?.following);
-	const videoDescription = document.getElementsByClassName("video-description");
-	Array.from(videoDescription).forEach((element) => {
-		const text = truncateText(element.innerText, 180);
-		element.innerHTML = text;
-	})
-	const videoName = document.getElementsByClassName("video-name");
-	Array.from(videoName).forEach((e) => {
-		const aTag = e.getElementsByTagName("a")[0];
-		if (aTag) {
-			aTag.innerText = truncateText(e.innerText, 21);
-		}
-	})
 })();
 function restoreInfo(id, number) {
 	document.getElementById(id).innerHTML = number;
