@@ -7,18 +7,19 @@
 	// restoreInfo("githubRepos", github?.public_repos);
 	// restoreInfo("githubFollowing", github?.followers);
 	// restoreInfo("githubFollowing", github?.following);
+	const videoDescription = document.getElementsByClassName("video-description");
+	Array.from(videoDescription).forEach((element) => {
+		const text = truncateText(element.innerText, 230);
+		element.innerHTML = text;
+	})
+	const videoName = document.getElementsByClassName("video-name");
+	Array.from(videoName).forEach((e) => {
+		const aTag = e.getElementsByTagName("a")[0];
+		if (aTag) {
+			aTag.innerText = truncateText(e.innerText, 21);
+		}
+	})
 })();
-const adaptiveClick = document.getElementById("enb");
-adaptiveClick.addEventListener("click", () => {
-	return;
- 	if (adaptiveClick.textContent.trim().toLowerCase() == "kredwi - тупость в коде") {
-  		adaptiveClick.innerHTML = "Kredwi - Доступность в коде"
-    	enableAdaptive(false);
- 	} else {
-  		adaptiveClick.innerHTML = "Kredwi - Тупость в коде"
-		enableAdaptive(true);
- 	}
-});
 function restoreInfo(id, number) {
 	document.getElementById(id).innerHTML = number;
 }
@@ -46,21 +47,25 @@ function replaceCSS(u) {
 function redirect(e) {
 	const url = {
 		channel: "https://www.youtube.com/channel/UCH-f_szwD2msRXhwMmePeiA",
-		video1: "",
-		video2: "",
-		video3: ""
+		video1: "https://youtu.be/wb9SfsxcWHw",
+		video2: "https://youtu.be/pgMv4uEAWSM",
+		video3: "https://youtu.be/lZJOzJVdaU4"
 	}
 	switch (e) {
 	case 1:
-		window.location.href = url.channel;
+		window.open(url.channel, "_blank");
 		break;
 	case 2:
-		window.location.href = url.channel;
+		window.open(url.channel, "_blank");
 		break;
 	case 3:
-		window.location.href = url.channel;
+		window.open(url.channel, "_blank");
 		break;
 	default:
 		throw new Error("Error rederection");
 	}
+}
+function truncateText(text, length) {
+	if (text.length > length) return text.substring(0, length).trim() + "...";
+	else return text;
 }
