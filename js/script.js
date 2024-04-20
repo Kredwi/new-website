@@ -3,10 +3,10 @@
 	const discord = await fetchData("https://discord.com/api/guilds/766538286214283265/widget.json");
 	restoreInfo("discordMembers", discord?.members?.length);
 	restoreInfo("discordChannels", discord?.channels?.length);
-	// const github = await fetchData("https://api.github.com/users/kredwi");
-	// restoreInfo("githubRepos", github?.public_repos);
-	// restoreInfo("githubFollowing", github?.followers);
-	// restoreInfo("githubFollowing", github?.following);
+	const github = await fetchData("https://api.github.com/users/kredwi");
+	restoreInfo("githubRepos", github?.public_repos || 0);
+	restoreInfo("githubFollowing", github?.followers || 0);
+	restoreInfo("githubFollowing", github?.following || 0);
 	document.getElementById("enb").addEventListener("click", (event) => {
 	    const redirectToOldWeb = confirm("Открыть новую вкладку?");
 	    redirectToOldWeb ? window.open("https://kredwi.ru", "_blank") : window.open("https://kredwi.ru", "_self");
@@ -22,19 +22,6 @@ async function fetchData(u, b) {
 	} catch (error) {
 		console.error(error)
 	}
-}
-function enableAdaptive(e) {
-	if (!e) replaceCSS("css/style-adaptive.css");
-		else replaceCSS("css/style.css");
-}
-function replaceCSS(u) {
-	const newCSS = document.createElement("link");
-	newCSS.rel = 'stylesheet';
-	newCSS.href = u;
-	newCSS.id = "style";
-	const currentCSS = document.getElementById("style");
-	document.head.appendChild(newCSS);
-	currentCSS.parentNode.removeChild(currentCSS);
 }
 function redirect(e) {
 	const url = {

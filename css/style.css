@@ -142,6 +142,8 @@ h3, h4 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
+	overflow: hidden;
 }
 #videos-block::before {
 	content: "";
@@ -155,6 +157,19 @@ h3, h4 {
 	background-size: 100%;
   z-index: -1;
 	animation: tractor-slide 2s forwards;
+}
+#videos-block::after {
+	content: "";
+	background-image: url(../img/island.png);
+	height: 250px;
+	width: 220px;
+	transform: scaleX(-1);
+  position: absolute;
+  right: -200px;
+  background-position: center;
+	background-size: 100%;
+  z-index: -1;
+	animation: island-slide 3s forwards;
 }
 .video-name {
 	font-family: arial;
@@ -312,6 +327,10 @@ h3, h4 {
 	#videos-block::before {
 		height: 18vw;
 		width: 18vw;
+	}
+	#videos-block::after {
+		height: 16.11vw;
+		width: 16.11vw;
 	}
 	.video-name {
 		font-size: 1.5vw;
@@ -492,6 +511,9 @@ h3, h4 {
 		content: "";
 		display: none;
 	}
+	#videos-block::after {
+		display: none;
+	}
 	.video-preview {
 		height: auto;
 		width: 80vw;
@@ -512,6 +534,13 @@ h3, h4 {
     left: -200px;
 	} to {
 		left: 4px;
+	}
+}
+@keyframes island-slide {
+	from {
+    right: -200px;
+	} to {
+		right: 4px;
 	}
 }
 @keyframes kredwi-speed {
