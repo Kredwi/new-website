@@ -31,7 +31,8 @@ h3, h4 {
 
 #header {
 	height: 100%;
-	background-color: #0d0d0d;
+	background-color: #141313;
+	border-bottom: 0.1vw solid orange;
 	padding: 0.2%;
 	margin: 0.2%;
 }
