@@ -7,6 +7,10 @@
 	// restoreInfo("githubRepos", github?.public_repos);
 	// restoreInfo("githubFollowing", github?.followers);
 	// restoreInfo("githubFollowing", github?.following);
+	document.getElementById("enb").addEventListener("click", (event) => {
+	    const redirectToOldWeb = confirm("Открыть новую вкладку?");
+	    redirectToOldWeb ? window.open("https://kredwi.ru", "_blank") : window.open("https://kredwi.ru", "_self");
+	})
 })();
 function restoreInfo(id, number) {
 	document.getElementById(id).innerHTML = number;
