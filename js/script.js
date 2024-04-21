@@ -18,7 +18,7 @@
 			public_repos: github?.public_repos || 0, 
 			followers: github?.followers || 0, 
 			following: github?.following || 0, 
-			created: new Date().getTime() // Получаем UNIX время
+			created: Math.floor(new Date().getTime() / 1000)) // Получаем UNIX время (секунды)
 		}));
 	}
 	document.getElementById("enb").addEventListener("click", (event) => { // Добавляем обработчик нажатий на Footer-Текст
