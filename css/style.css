@@ -162,7 +162,7 @@ h3, h4 {
 	content: "";
 	background-image: url(../img/island.png);
 	height: 250px;
-	width: 220px;
+	width: 214px;
 	transform: scaleX(-1);
   position: absolute;
   right: -200px;
