@@ -4,7 +4,7 @@
 	restoreInfo("discordMembers", discord?.members?.length); // Прорисовка количество участников в HTML дереве
 	restoreInfo("discordChannels", discord?.channels?.length); // Прорисовка количество каналов в HTML дереве
 	const githubLS = checkLocalStorage("github"); // Получение данных с LocalStorage
-	if (!githubLS || (new Date().getTime() / 1000) - githubLS?.created >= toHours(3)) {// Проверяем, если в LocalStorage нет данных или время с момента их создания больше трех часов, то выполняем запрос к GitHub API для получения свежих данных
+	if (!githubLS || (new Date().getTime() / 1000) - githubLS?.created >= toHours(3)) { // Проверяем, если в LocalStorage нет данных или время с момента их создания больше трех часов, то выполняем запрос к GitHub API для получения свежих данных
 		const github = await fetchData("https://api.github.com/users/kredwi"); // Запрос данных с GitHub
 		restoreInfo("githubRepos", github?.public_repos || 0); // Прорисовка количество репозиторий в HTML дереве
 		restoreInfo("githubFollowing", github?.followers || 0); // Прорисовка количество фолловеров в HTML дереве
