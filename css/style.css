@@ -60,8 +60,8 @@ h3, h4 {
 	padding: 0;
 	margin: 0;
 }
-#alert {
-	background-color: rgba(0, 255, 0, 0.479);
+#alert, #error, #warn {
+	overflow: hidden;
 	border-radius: 0.3vw;
 	display: flex;
 	justify-content: space-between;
@@ -72,29 +72,45 @@ h3, h4 {
 	width: 30vw;
 	position: fixed;
 	right: -50%;
-	animation: alert-move 2s forwards;
+	animation: alert-move 4s forwards;
 	backdrop-filter: blur(1vw);
 	font-family: Arial, Helvetica, sans-serif;
 	z-index: 3;
 }
-#alert-text {
+#alert-text, #error-text {
 	flex-direction: column;
 	justify-content: center;
 	flex: 1;
 }
-#alert-text span {
-	color: white;
+#alert-text, #error-text {
 	flex: 1;
 	font-size: 1vw;
 	font-weight: bold;
 }
+#alert-text p, #error-text p {
+	flex: 1;
+	font-size: 0.9vw;
+}
+#alert-text span,
+#alert-text p,
+#alert-text button,
+#error-text span,
+#error-text p,
+#alert-text button {
+	padding: 0;
+	margin: 0;
+}
+#alert {
+	background-color: rgba(0, 255, 0, 0.479);
+}
+#alert-text span {
+	color: white;
+}
 #alert-text p {
 	color: lightgrey;
-	flex: 1;
-	font-size: 0.8vw;
 }
 #alert button {
-	font-size: 1.0vw;
+	font-size: 1.1vw;
 	color: gray;
 	border: 0.2vw solid #2b2b2e;
 	background-color: #252625;
@@ -105,11 +121,17 @@ h3, h4 {
 #alert button:active {
 	animation: button-active 0.2s forwards;
 }
-#alert-text span,
-#alert-text p,
-#alert-text button {
-	padding: 0;
-	margin: 0;
+#error {
+	background-color: rgba(255, 0, 0, 0.479);
+}
+#error-text span {
+	color: #ffffff;
+}
+#error-text p {
+	color: lightgrey;
+}
+#error-text span span {
+	color: red;
 }
 #main #slogan h1,
 #main #slogan h2 {
@@ -544,6 +566,12 @@ h3, h4 {
 		display: none;
 	}
 	#alert {
+		display: none;
+	}
+	#error {
+		display: none;
+	}
+	#warn {
 		display: none;
 	}
 	#statsBox::before {

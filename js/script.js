@@ -1,4 +1,7 @@
 "use strict"; // Строгий режим
+
+const header = document.getElementById("header");
+
 (async () => { // Анонимная функция
 	const discord = await fetchData("https://discord.com/api/guilds/766538286214283265/widget.json"); // Запрос данных с Discord
 	restoreInfo("discordMembers", discord?.members?.length); // Прорисовка количество участников в HTML дереве
@@ -25,13 +28,13 @@
 	    const redirectToOldWeb = confirm("Открыть новую вкладку?"); // Спрашиваем, как открыть ссылку
 	    redirectToOldWeb ? window.open("https://kredwi.ru", "_blank") : window.open("https://kredwi.ru", "_self"); // Открываем ссылку
 	});
-	document.getElementById("alert").addEventListener("click", () => { // Добавляем обработчик нажатий на Уведомление
-		document.getElementById("alert").style.display = "none"; // Скрываем уведомление
-		// localStorage.setItem("alert", JSON.stringify({
-		// 	shorts: "kShortsDepbios7654", // Уникальный ID Short
-		// 	off: Math.floor(new Date().getTime() / 1000) // Время когда он нажал на него
-		// }));
-	});
+	createAlert(
+		'На канале "Kredwi" вышел новый Shorts',
+		'Зачем переименовывают вещи в Minecraft',
+		"Смотреть",
+		"redirect(4)"
+	);
+
 })();
 // Функция для изменения значения в HTML-дереве
 function restoreInfo(id, number) {
@@ -79,4 +82,41 @@ function checkLocalStorage(n) {
 // Функция для преобразования часов в секунды
 function toHours(h) {
 	return h * 60 * 60; // Возращаем часы в UNIX-времени
+}
+function createAlert(title, description, buttonText = "Ок", functionName = "") {
+	if (
+		document.getElementById("alert") ||
+		document.getElementById("error") ||
+		document.getElementById("warn")
+	) return console.warn("Alert is created");
+	header.insertAdjacentHTML("afterend", `
+		<article id="alert">
+			<div id="alert-text">
+				<span>${title}</span>
+				<p>${description}</p>
+			</div>
+			<button onclick="${String(functionName)}">${buttonText}</button>
+		</article>
+	`)
+	document.getElementById("alert").addEventListener("click", () => { // Добавляем обработчик нажатий на Уведомление
+		document.getElementById("alert").remove() // Удаляем уведомление
+	});
+}
+function createError(title, description) {
+	if (
+		document.getElementById("alert") ||
+		document.getElementById("error") ||
+		document.getElementById("warn")
+	) return console.warn("Alert is created");
+	header.insertAdjacentHTML("afterend", `
+		<article id="error">
+			<div id="error-text">
+				<span><span class="red">ВНИМАНИЕ:</span> ${title}</span>
+				<p>${description}</p>
+			</div>
+		</article>
+	`)
+	document.getElementById("error").addEventListener("click", () => { // Добавляем обработчик нажатий на Уведомление
+		document.getElementById("error").remove() // Удаляем уведомление
+	});
 }
