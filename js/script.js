@@ -21,10 +21,17 @@
 		restoreInfo("githubFollowing", githubLS?.following || 0); // Прорисовка количество подписок в HTML дереве
 		console.log("GitHub loaded old information from localStorage. Created (UNIX): " + (githubLS?.created || "Not Found"));
 	}
-	document.getElementById("enb").addEventListener("click", (event) => { // Добавляем обработчик нажатий на Footer-Текст
+	document.getElementById("enb").addEventListener("click", () => { // Добавляем обработчик нажатий на Footer-Текст
 	    const redirectToOldWeb = confirm("Открыть новую вкладку?"); // Спрашиваем, как открыть ссылку
 	    redirectToOldWeb ? window.open("https://kredwi.ru", "_blank") : window.open("https://kredwi.ru", "_self"); // Открываем ссылку
-	})
+	});
+	document.getElementById("alert").addEventListener("click", () => { // Добавляем обработчик нажатий на Уведомление
+		document.getElementById("alert").style.display = "none"; // Скрываем уведомление
+		// localStorage.setItem("alert", JSON.stringify({
+		// 	shorts: "kShortsDepbios7654", // Уникальный ID Short
+		// 	off: Math.floor(new Date().getTime() / 1000) // Время когда он нажал на него
+		// }));
+	});
 })();
 // Функция для изменения значения в HTML-дереве
 function restoreInfo(id, number) {
@@ -45,7 +52,8 @@ function redirect(e) {
 		channel: "https://www.youtube.com/channel/UCH-f_szwD2msRXhwMmePeiA",
 		video1: "https://youtu.be/wb9SfsxcWHw",
 		video2: "https://youtu.be/pgMv4uEAWSM",
-		video3: "https://youtu.be/lZJOzJVdaU4"
+		video3: "https://youtu.be/lZJOzJVdaU4",
+		video4: "https://www.youtube.com/shorts/UK7DKkY6YlY"
 	}
 	switch (e) {
 		case 1:
@@ -56,6 +64,9 @@ function redirect(e) {
 			break;
 		case 3:
 			window.open(url.video3, "_blank");
+			break;
+		case 4:
+			window.open(url.video4, "_blank");
 			break;
 		default:
 			throw new Error("Error rederection");
