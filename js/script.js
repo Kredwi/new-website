@@ -28,13 +28,13 @@ const header = document.getElementById("header");
 	    const redirectToOldWeb = confirm("Открыть новую вкладку?"); // Спрашиваем, как открыть ссылку
 	    redirectToOldWeb ? window.open("https://kredwi.ru", "_blank") : window.open("https://kredwi.ru", "_self"); // Открываем ссылку
 	});
-	createAlert(
-		'На канале "Kredwi" вышел новый Shorts',
-		'Зачем переименовывают вещи в Minecraft',
-		"Смотреть",
-		"redirect(4)"
+	createNotification( // Создаем уведомление
+		'alert', // Тип уведомление Alert
+		'На канале "Kredwi" вышел новый Shorts', // Заголовок
+		'Зачем переименовывают вещи в Minecraft', // Описание
+		"Смотреть", // Текст на кнопке
+		"redirect(4)" // Название функции для запуска
 	);
-
 })();
 // Функция для изменения значения в HTML-дереве
 function restoreInfo(id, number) {
@@ -83,40 +83,54 @@ function checkLocalStorage(n) {
 function toHours(h) {
 	return h * 60 * 60; // Возращаем часы в UNIX-времени
 }
-function createAlert(title, description, buttonText = "Ок", functionName = "") {
+function createNotification(type, title, description, buttonText = "Ок", functionName = "") {
 	if (
 		document.getElementById("alert") ||
 		document.getElementById("error") ||
 		document.getElementById("warn")
 	) return console.warn("Alert is created");
-	header.insertAdjacentHTML("afterend", `
-		<article id="alert">
-			<div id="alert-text">
-				<span>${title}</span>
-				<p>${description}</p>
-			</div>
-			<button onclick="${String(functionName)}">${buttonText}</button>
-		</article>
-	`)
-	document.getElementById("alert").addEventListener("click", () => { // Добавляем обработчик нажатий на Уведомление
-		document.getElementById("alert").remove() // Удаляем уведомление
-	});
-}
-function createError(title, description) {
-	if (
-		document.getElementById("alert") ||
-		document.getElementById("error") ||
-		document.getElementById("warn")
-	) return console.warn("Alert is created");
-	header.insertAdjacentHTML("afterend", `
-		<article id="error">
-			<div id="error-text">
-				<span><span class="red">ВНИМАНИЕ:</span> ${title}</span>
-				<p>${description}</p>
-			</div>
-		</article>
-	`)
-	document.getElementById("error").addEventListener("click", () => { // Добавляем обработчик нажатий на Уведомление
-		document.getElementById("error").remove() // Удаляем уведомление
-	});
+	switch (type.toLowerCase()) {
+		case 'alert':
+			header.insertAdjacentHTML("afterend", `
+				<article id="alert">
+					<div id="alert-text">
+						<span>${title}</span>
+						<p>${description}</p>
+					</div>
+					<button onclick="${String(functionName)}">${buttonText}</button>
+				</article>
+			`);
+			document.getElementById("alert").addEventListener("click", () => { // Добавляем обработчик нажатий на Уведомление
+				document.getElementById("alert").remove() // Удаляем уведомление
+			});
+			break;
+		case 'warn':
+			header.insertAdjacentHTML("afterend", `
+				<article id="warn">
+					<div id="warn-text">
+						<span><span class="red">ВНИМАНИЕ: </span> ${title}</span>
+						<p>${description}</p>
+					</div>
+				</article>
+			`);
+			document.getElementById("warn").addEventListener("click", () => { // Добавляем обработчик нажатий на Уведомление
+				document.getElementById("warn").remove() // Удаляем уведомление
+			});
+			break;
+		case 'error':
+			header.insertAdjacentHTML("afterend", `
+				<article id="error">
+					<div id="error-text">
+						<span><span class="red">ОШИБКА: </span> ${title}</span>
+						<p>${description}</p>
+					</div>
+				</article>
+			`);
+			document.getElementById("error").addEventListener("click", () => { // Добавляем обработчик нажатий на Уведомление
+				document.getElementById("error").remove() // Удаляем уведомление
+			});
+			break;
+		default:
+			return console.error(`${key} not found`);
+	}
 }
