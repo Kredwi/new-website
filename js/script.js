@@ -83,14 +83,15 @@ function checkLocalStorage(n) {
 function toHours(h) {
 	return h * 60 * 60; // Возращаем часы в UNIX-времени
 }
-function createNotification(type, title, description, buttonText = "Ок", functionName = "") {
+function createNotification(type, title, description = "", buttonText = "Ок", functionName = "") {
 	if (
-		document.getElementById("alert") ||
-		document.getElementById("error") ||
-		document.getElementById("warn")
-	) return console.warn("Alert is created");
-	switch (type.toLowerCase()) {
-		case 'alert':
+		document.getElementById("alert") || // Если на странице существует ID "alert"
+		document.getElementById("error") || // Если на странице существует ID "error"
+		document.getElementById("warn") // Если на странице существует ID "warn"
+	) return console.warn("Alert is created"); // То в консоль выводится предупреждение, о том что уведомление уже существует
+	if (!type || !title || !title.length) return console.error("Please, fill all fields"); // Выводим ошибку, если заполнены, не все данные
+	switch (type.toLowerCase()) { // Получаем type, и превращаем его в нижний РеГиСтР
+		case 'alert': // Если ключ равен "alert"
 			header.insertAdjacentHTML("afterend", `
 				<article id="alert">
 					<div id="alert-text">
@@ -104,7 +105,7 @@ function createNotification(type, title, description, buttonText = "Ок", funct
 				document.getElementById("alert").remove() // Удаляем уведомление
 			});
 			break;
-		case 'warn':
+		case 'warn': // Если ключ равен "warn"
 			header.insertAdjacentHTML("afterend", `
 				<article id="warn">
 					<div id="warn-text">
@@ -117,7 +118,7 @@ function createNotification(type, title, description, buttonText = "Ок", funct
 				document.getElementById("warn").remove() // Удаляем уведомление
 			});
 			break;
-		case 'error':
+		case 'error': // Если ключ равен "error"
 			header.insertAdjacentHTML("afterend", `
 				<article id="error">
 					<div id="error-text">
@@ -131,6 +132,6 @@ function createNotification(type, title, description, buttonText = "Ок", funct
 			});
 			break;
 		default:
-			return console.error(`${key} not found`);
+			return console.error(`${key} not found`); // Отправляем ошибку, что данный тип уведомление не найден
 	}
 }
