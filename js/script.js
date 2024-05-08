@@ -1,6 +1,6 @@
 "use strict"; // Строгий режим
 
-const header = document.getElementById("header");
+const header = document.getElementById("header"); // Получаем id header страницы
 
 (async () => { // Анонимная функция
 	const discord = await fetchData("https://discord.com/api/guilds/766538286214283265/widget.json"); // Запрос данных с Discord
