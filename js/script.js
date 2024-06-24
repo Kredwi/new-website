@@ -28,13 +28,6 @@ const header = document.getElementById("header"); // Получаем id header 
 	    const redirectToOldWeb = confirm("Открыть новую вкладку?"); // Спрашиваем, как открыть ссылку
 	    redirectToOldWeb ? window.open("https://kredwi.ru", "_blank") : window.open("https://kredwi.ru", "_self"); // Открываем ссылку
 	});
-	createNotification( // Создаем уведомление
-		'alert', // Тип уведомление Alert
-		'На канале "Kredwi" вышел новый Shorts', // Заголовок
-		'Зачем переименовывают вещи в Minecraft', // Описание
-		"Смотреть", // Текст на кнопке
-		"redirect(4)" // Название функции для запуска
-	);
 })();
 // Функция для изменения значения в HTML-дереве
 function restoreInfo(id, number) {
