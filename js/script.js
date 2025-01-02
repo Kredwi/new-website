@@ -50,7 +50,7 @@ function redirect(e) {
 		video2: "https://youtu.be/pgMv4uEAWSM",
 		video3: "https://youtu.be/lZJOzJVdaU4",
 		video4: "https://www.youtube.com/shorts/UK7DKkY6YlY",
-		newsite: "https://kredwi.github.com/new-website"
+		newsite: "https://kredwi.github.io/new-website"
 	}
 	switch (e) {
 		case 1:
