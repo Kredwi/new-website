@@ -49,7 +49,8 @@ function redirect(e) {
 		video1: "https://youtu.be/wb9SfsxcWHw",
 		video2: "https://youtu.be/pgMv4uEAWSM",
 		video3: "https://youtu.be/lZJOzJVdaU4",
-		video4: "https://www.youtube.com/shorts/UK7DKkY6YlY"
+		video4: "https://www.youtube.com/shorts/UK7DKkY6YlY",
+		newsite: "https://www.youtube.com/shorts/UK7DKkY6YlY"
 	}
 	switch (e) {
 		case 1:
@@ -64,8 +65,11 @@ function redirect(e) {
 		case 4:
 			window.open(url.video4, "_blank");
 			break;
+		case 5:
+			window.open(url.newsite, "_blank");
+			break;
 		default:
-			throw new Error("Error rederection");
+			throw new Error("Error redirection");
 	}
 }
 // Функция для проверки LocalStorage (Локального хранилище)
@@ -128,3 +132,4 @@ function createNotification(type, title, description = "", buttonText = "Ок", 
 			return console.error(`${key} not found`); // Отправляем ошибку, что данный тип уведомление не найден
 	}
 }
+createNotification("alert", "Сайт переезжает! (28.02.2025)" , "Сайт перезжает на новый адрес, оплатить этот адрес не имеется возможности", "Перейти", "redirect(5)");
