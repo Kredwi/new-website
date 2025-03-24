@@ -132,4 +132,3 @@ function createNotification(type, title, description = "", buttonText = "Ок", 
 			return console.error(`${key} not found`); // Отправляем ошибку, что данный тип уведомление не найден
 	}
 }
-createNotification("alert", "Сайт переезжает на новый адрес!" , "Домен оплачивать нужно, а денег нету (28.02.2025)", "Перейти на сайт", "redirect(5)");
