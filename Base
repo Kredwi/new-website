@@ -99,7 +99,7 @@
 		<div id="videos-block">
 			<div id="video-1">
 				<h4 class="video-name"><a class="video-name" href="https://youtu.be/wb9SfsxcWHw">Где скачивать моды?</a></h4>
-				<img class="video-preview" alt="Not" src="https://i.ytimg.com/vi/wb9SfsxcWHw/maxresdefault.jpg">
+				<img class="video-preview" alt="Наверное стоит включить средство обхода..." src="https://i.ytimg.com/vi/wb9SfsxcWHw/maxresdefault.jpg">
 				<span class="video-category">Категория: <span>Туториал</span></span>
 				<hr>
 				<p class="video-description">В этом видео, я вам расскажу про то, какие сайты использовал каждый, для того что бы скачивать моды в Майнкрафт. Все мы любим играть с модами, но у нас всегда появляется вопрос. Где скачать безопасно моды? В этом видео я про это расскажу.</p>
@@ -107,7 +107,7 @@
 			</div>
 			<div id="video-2">
 				<h4 class="video-name"><a class="video-name" href="https://youtu.be/pgMv4uEAWSM">ЧТО СТРОИТ ЭТОТ ГЕНИЙ?! | BUILDBATTLE в Minecraft</a></h4>
-				<img class="video-preview" alt="Not" src="https://i.ytimg.com/vi/pgMv4uEAWSM/maxresdefault.jpg">
+				<img class="video-preview" alt="Наверное стоит включить средство обхода..." src="https://i.ytimg.com/vi/pgMv4uEAWSM/maxresdefault.jpg">
 				<span class="video-category">Категория: <span>BuildBattle</span></span>
 				<hr>
 				<p class="video-description">Что строит этот гений?
@@ -116,7 +116,7 @@
 			</div>
 			<div id="video-3">
 				<h4 class="video-name"><a class="video-name" href="https://youtu.be/lZJOzJVdaU4">ЭТО НЕ ПРОСТО СНАЙПЕР?? ДА ЭТО ЧИТЕР!!!! | Снайперы в Minecraft</a></h4>
-				<img class="video-preview" alt="Not" src="https://i.ytimg.com/vi/lZJOzJVdaU4/maxresdefault.jpg">
+				<img class="video-preview" alt="Наверное стоит включить средство обхода..." src="https://i.ytimg.com/vi/lZJOzJVdaU4/maxresdefault.jpg">
 				<span class="video-category">Категория: <span>Снайперы</span></span>
 				<hr>
 				<p class="video-description">Этот Читер был настолько силен, что мне пришлось использовать секретное оружие, я не знал поможет ли мне оно? Он хотел победить, но он не знал что я использовал секретное оружие, а вот что за секретное оружие узнайте в ролике. Удачного просмотра!</p>
@@ -147,3 +147,4 @@
 	<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
+
