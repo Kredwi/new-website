@@ -132,3 +132,4 @@ function createNotification(type, title, description = "", buttonText = "Ок", 
 			return console.error(`${key} not found`); // Отправляем ошибку, что данный тип уведомление не найден
 	}
 }
+alert("Уведомление от 11.08.2025", "У меня сломался ноутбук");
