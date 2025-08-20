@@ -86,7 +86,7 @@ function createNotification(type, title, description = "", buttonText = "Ок", 
 		document.getElementById("error") || // Если на странице существует ID "error"
 		document.getElementById("warn") // Если на странице существует ID "warn"
 	) return console.warn("Alert is created"); // То в консоль выводится предупреждение, о том что уведомление уже существует
-	if (!type || !title || !title.length) return console.error("Please, fill all fields"); // Выводим ошибку, если заполнены, не все данные
+	if (!type || !title || !title.length) return console.error("Please, fill all fields"); // Выводим ошибку, если заполнены не все данные
 	switch (type.toLowerCase()) { // Получаем type, и превращаем его в нижний РеГиСтР
 		case 'alert': // Если ключ равен "alert"
 			header.insertAdjacentHTML("afterend", `
@@ -132,4 +132,4 @@ function createNotification(type, title, description = "", buttonText = "Ок", 
 			return console.error(`${key} not found`); // Отправляем ошибку, что данный тип уведомление не найден
 	}
 }
-alert("Уведомление от 11.08.2025", "У меня сломался ноутбук");
+createNotification("alert", "Уведомление от 11.08.2025", "У меня сломался ноутбук");
