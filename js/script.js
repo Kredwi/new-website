@@ -3,32 +3,53 @@
 const header = document.getElementById("header"); // Получаем id header страницы
 
 (async () => { // Анонимная функция
-	const discord = await fetchData("https://discord.com/api/guilds/766538286214283265/widget.json"); // Запрос данных с Discord
-	restoreInfo("discordMembers", discord?.members?.length); // Прорисовка количество участников в HTML дереве
-	restoreInfo("discordChannels", discord?.channels?.length); // Прорисовка количество каналов в HTML дереве
-	const githubLS = checkLocalStorage("github"); // Получение данных с LocalStorage
-	if (!githubLS || (new Date().getTime() / 1000) - githubLS?.created >= toHours(3)) { // Проверяем, если в LocalStorage нет данных или время с момента их создания больше трех часов, то выполняем запрос к GitHub API для получения свежих данных
-		const github = await fetchData("https://api.github.com/users/kredwi"); // Запрос данных с GitHub
-		restoreInfo("githubRepos", github?.public_repos || 0); // Прорисовка количество репозиторий в HTML дереве
-		restoreInfo("githubFollowing", github?.followers || 0); // Прорисовка количество фолловеров в HTML дереве
-		restoreInfo("githubFollowing", github?.following || 0); // Прорисовка количество подписок в HTML дереве
-		localStorage.setItem("github", JSON.stringify({ // Сохранение ифнормации в LocalStorage в JSON формате
-			public_repos: github?.public_repos || 0, 
-			followers: github?.followers || 0, 
-			following: github?.following || 0, 
-			created: Math.floor(new Date().getTime() / 1000) // Получаем UNIX время (секунды)
-		}));
-	} else {
-		restoreInfo("githubRepos", githubLS?.public_repos || 0); // Прорисовка количество репозиторий в HTML дереве
-		restoreInfo("githubFollowing", githubLS?.followers || 0); // Прорисовка количество фолловеров в HTML дереве
-		restoreInfo("githubFollowing", githubLS?.following || 0); // Прорисовка количество подписок в HTML дереве
-		console.log("GitHub loaded old information from localStorage. Created (UNIX): " + (githubLS?.created || "Not Found"));
-	}
+  discordFetch();
+	githubFetch();
 	document.getElementById("enb").addEventListener("click", () => { // Добавляем обработчик нажатий на Footer-Текст
 	    const redirectToOldWeb = confirm("Открыть новую вкладку?"); // Спрашиваем, как открыть ссылку
 	    redirectToOldWeb ? window.open("https://kredwi.ru", "_blank") : window.open("https://kredwi.ru", "_self"); // Открываем ссылку
 	});
 })();
+async function discordFetch() {
+  const discordElement = document.getElementById("discord");
+  try {
+    const discord = await fetchData("https://discord.com/api/guilds/766538286214283265/widget.json"); // Запрос данных с Discord
+      if (discord == undefined) {
+    console.error("error loading data from discord. Check your Ethernet connection.");
+    createNotification("warn", "Данные с Discord не были скачаны из-за ошибки", "Раздел с Discord скрыт.");
+    return;
+  }
+restoreInfo("discordMembers", discord?.members?.length); // Прорисовка количество участников в HTML дереве каналов в HTML дереве
+discordElement.removeAttribute("hidden");  
+  } catch (e) {
+    discordElement.setAttribute("hidden", "hidden");
+  }
+}
+async function githubFetch() {
+  const githubLS = checkLocalStorage("github"); // Получение данных с LocalStorage
+if (!githubLS || (new Date().getTime() / 1000) - githubLS?.created >= toHours(3)) { // Проверяем, если в LocalStorage нет данных или время с момента их создания больше трех часов, то выполняем запрос к GitHub API для получения свежих данных
+  const github = await fetchData("https://api.github.com/users/kredwi"); // Запрос данных с GitHub
+  if (github == undefined) {
+    console.error("error loading data from github");
+    return;
+  }
+  restoreInfo("githubRepos", github?.public_repos || 0); // Прорисовка количество репозиторий в HTML дереве
+  restoreInfo("githubFollowing", github?.followers || 0); // Прорисовка количество фолловеров в HTML дереве
+  restoreInfo("githubFollowing", github?.following || 0); // Прорисовка количество подписок в HTML дереве
+  localStorage.setItem("github", JSON.stringify({ // Сохранение ифнормации в LocalStorage в JSON формате
+    public_repos: github?.public_repos || 0,
+    followers: github?.followers || 0,
+    following: github?.following || 0,
+    created: Math.floor(new Date().getTime() / 1000) // Получаем UNIX время (секунды)
+  }));
+} else {
+  restoreInfo("githubRepos", githubLS?.public_repos || 0); // Прорисовка количество репозиторий в HTML дереве
+  restoreInfo("githubFollowing", githubLS?.followers || 0); // Прорисовка количество фолловеров в HTML дереве
+  restoreInfo("githubFollowing", githubLS?.following || 0); // Прорисовка количество подписок в HTML дереве
+  console.log("GitHub loaded old information from localStorage. Created (UNIX): " + (githubLS?.created || "Not Found"));
+}
+}
+
 // Функция для изменения значения в HTML-дереве
 function restoreInfo(id, number) {
 	document.getElementById(id).innerHTML = number; // Меняем значение в HTML дереве
@@ -40,6 +61,7 @@ async function fetchData(u, b) {
 		return await response.json();
 	} catch (error) {
 		console.error(error);
+		return undefined;
 	}
 }
 // Функция для открытия ссылки на видео/YouTube канал при клике на кнопку
