@@ -182,7 +182,7 @@ function mainChannel() {
 	addVideo({
     name: "Где скачивать моды?",
     url: "https://youtu.be/wb9SfsxcWHw",
-    preview: "https://i.ytimg.com/vi/wb9SfsxcWHw/maxresdefault.jpg",
+    preview: "https://img.plvideo.ru/images/fp-2024-import-cover/6698009c7a73c3a44a0b33fa/669c0efd9cea2a759511ca3a.jpg?w=720&webp=1",
     category: "Туториал",
     description: "В этом видео, я вам расскажу про то, какие сайты использовал каждый, для того что бы скачивать моды в Майнкрафт. Все мы любим играть с модами, но у нас всегда появляется вопрос. Где скачать безопасно моды? В этом видео я про это расскажу.",
     action: "redirect(1)"
@@ -191,7 +191,7 @@ function mainChannel() {
 addVideo({
     name: "ЧТО СТРОИТ ЭТОТ ГЕНИЙ?! | BUILDBATTLE в Minecraft",
     url: "https://youtu.be/pgMv4uEAWSM",
-    preview: "https://i.ytimg.com/vi/pgMv4uEAWSM/maxresdefault.jpg",
+    preview: "https://img.plvideo.ru/images/fp-2024-import-cover/6698009c7a73c3a44a0b33fa/669991a19cea2a759511b9d0.webp?w=720&webp=1",
     category: "BuildBattle",
     description: "Что строит этот гений?  Этот гений строит Постройку которую я не могу описать в описании, он слишком гениален что бы понять что эта постройка не похоже на то что нам нужно. Когда нибудь он поймет что надо было строить вот это а не это. А вот что он строил узнаете в ролике. Приятного просмотра.",
     action: "redirect(2)"
@@ -200,7 +200,7 @@ addVideo({
 addVideo({
     name: "ЭТО НЕ ПРОСТО СНАЙПЕР?? ДА ЭТО ЧИТЕР!!!! | Снайперы в Minecraft",
     url: "https://youtu.be/lZJOzJVdaU4",
-    preview: "https://i.ytimg.com/vi/lZJOzJVdaU4/maxresdefault.jpg",
+    preview: "https://img.plvideo.ru/images/fp-2024-import-cover/6698009c7a73c3a44a0b33fa/669991a19cea2a759511b9d1.jpg?w=720&webp=1",
     category: "Снайперы",
     description: "Этот Читер был настолько силен, что мне пришлось использовать секретное оружие, я не знал поможет ли мне оно? Он хотел победить, но он не знал что я использовал секретное оружие, а вот что за секретное оружие узнайте в ролике. Удачного просмотра!",
     action: "redirect(3)"
