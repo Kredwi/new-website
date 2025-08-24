@@ -92,8 +92,16 @@
 	        </ul>
 		</div>
 		<hr>
+		<div id="channels-selector" style="display:flex;align-items: center;justify-content: center;">
+		  <div class="selector-wrapper"> 
+		    <input checked type="radio" name="channels" id="main" value="Основной" onclick="mainChannel()" />
+		    <label class="radio-label" for="main">Основной</label>
+		    <input type="radio" name="channels" id="second" value="Основной" onclick="secondChannel()" />
+		    <label class="radio-label" for="second">Второй</label>
+		  </div>
+		 </div>
 		<div id="videos-block">
-			<div id="video-1">
+			<div class="video">
 				<h4 class="video-name"><a class="video-name" href="https://youtu.be/wb9SfsxcWHw">Где скачивать моды?</a></h4>
 				<img class="video-preview" alt="Наверное стоит включить средство обхода..." src="https://i.ytimg.com/vi/wb9SfsxcWHw/maxresdefault.jpg">
 				<span class="video-category">Категория: <span>Туториал</span></span>
@@ -101,7 +109,7 @@
 				<p class="video-description">В этом видео, я вам расскажу про то, какие сайты использовал каждый, для того что бы скачивать моды в Майнкрафт. Все мы любим играть с модами, но у нас всегда появляется вопрос. Где скачать безопасно моды? В этом видео я про это расскажу.</p>
 				<button title="Перейти на страницу видео" class="video-check" onclick="redirect(1)">Смотреть</button>
 			</div>
-			<div id="video-2">
+			<div class="video">
 				<h4 class="video-name"><a class="video-name" href="https://youtu.be/pgMv4uEAWSM">ЧТО СТРОИТ ЭТОТ ГЕНИЙ?! | BUILDBATTLE в Minecraft</a></h4>
 				<img class="video-preview" alt="Наверное стоит включить средство обхода..." src="https://i.ytimg.com/vi/pgMv4uEAWSM/maxresdefault.jpg">
 				<span class="video-category">Категория: <span>BuildBattle</span></span>
@@ -110,7 +118,7 @@
 Этот гений строит Постройку которую я не могу описать в описании, он слишком гениален что бы понять что эта постройка не похоже на то что нам нужно. Когда нибудь он поймет что надо было строить вот это а не это. А вот что он строил узнаете в ролике. Приятного просмотра.</p>
 				<button title="Перейти на страницу видео" class="video-check" onclick="redirect(2)">Смотреть</button>
 			</div>
-			<div id="video-3">
+			<div class="video">
 				<h4 class="video-name"><a class="video-name" href="https://youtu.be/lZJOzJVdaU4">ЭТО НЕ ПРОСТО СНАЙПЕР?? ДА ЭТО ЧИТЕР!!!! | Снайперы в Minecraft</a></h4>
 				<img class="video-preview" alt="Наверное стоит включить средство обхода..." src="https://i.ytimg.com/vi/lZJOzJVdaU4/maxresdefault.jpg">
 				<span class="video-category">Категория: <span>Снайперы</span></span>

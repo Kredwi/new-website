@@ -1,6 +1,7 @@
 "use strict"; // Строгий режим
 
 const header = document.getElementById("header"); // Получаем id header страницы
+const videoBlock = document.getElementById("videos-block");
 
 (async () => { // Анонимная функция
   discordFetch();
@@ -71,8 +72,9 @@ function redirect(e) {
 		video1: "https://youtu.be/wb9SfsxcWHw",
 		video2: "https://youtu.be/pgMv4uEAWSM",
 		video3: "https://youtu.be/lZJOzJVdaU4",
-		video4: "https://www.youtube.com/shorts/UK7DKkY6YlY",
-		newsite: "https://kredwi.github.io/new-website"
+		video5: "https://m.youtube.com/watch?v=AFyfXrOuZX0",
+		video6: "https://m.youtube.com/watch?v=W4ZnoE_YE3A",
+		video7: "https://m.youtube.com/watch?v=-XfR1PO4lyw"
 	}
 	switch (e) {
 		case 1:
@@ -84,11 +86,14 @@ function redirect(e) {
 		case 3:
 			window.open(url.video3, "_blank");
 			break;
-		case 4:
-			window.open(url.video4, "_blank");
-			break;
 		case 5:
-			window.open(url.newsite);
+			window.open(url.video5, "_blank");
+			break;
+		case 6:
+			window.open(url.video6, "_blank");
+		break;
+		case 7:
+			window.open(url.video7, "_blank");
 			break;
 		default:
 			throw new Error("Error redirection");
@@ -155,3 +160,78 @@ function createNotification(type, title, description = "", buttonText = "Ок", 
 	}
 }
 createNotification("alert", "Уведомление от 11.08.2025", "У меня сломался ноутбук");
+
+function addVideo(info) {
+	const template = `<div class="video">
+				<h4 class="video-name"><a class="video-name" href="${info.url}">${info.name.toLowerCase()}</a></h4>
+				<img class="video-preview" alt="Наверное стоит включить средство обхода..." src="${info.preview}">
+				<span class="video-category">Категория: <span>${info.category}</span></span>
+				<hr>
+				<p class="video-description">${info.description}</p>
+				<button title="Перейти на страницу видео" class="video-check" onclick="${info.action}">Смотреть</button>
+			</div>`;
+			videoBlock.innerHTML += template;
+}
+
+function clearAllVideos() {
+	videoBlock.innerHTML = "";
+}
+
+function mainChannel() {
+	clearAllVideos();
+	addVideo({
+    name: "Где скачивать моды?",
+    url: "https://youtu.be/wb9SfsxcWHw",
+    preview: "https://i.ytimg.com/vi/wb9SfsxcWHw/maxresdefault.jpg",
+    category: "Туториал",
+    description: "В этом видео, я вам расскажу про то, какие сайты использовал каждый, для того что бы скачивать моды в Майнкрафт. Все мы любим играть с модами, но у нас всегда появляется вопрос. Где скачать безопасно моды? В этом видео я про это расскажу.",
+    action: "redirect(1)"
+});
+
+addVideo({
+    name: "ЧТО СТРОИТ ЭТОТ ГЕНИЙ?! | BUILDBATTLE в Minecraft",
+    url: "https://youtu.be/pgMv4uEAWSM",
+    preview: "https://i.ytimg.com/vi/pgMv4uEAWSM/maxresdefault.jpg",
+    category: "BuildBattle",
+    description: "Что строит этот гений?  Этот гений строит Постройку которую я не могу описать в описании, он слишком гениален что бы понять что эта постройка не похоже на то что нам нужно. Когда нибудь он поймет что надо было строить вот это а не это. А вот что он строил узнаете в ролике. Приятного просмотра.",
+    action: "redirect(2)"
+});
+
+addVideo({
+    name: "ЭТО НЕ ПРОСТО СНАЙПЕР?? ДА ЭТО ЧИТЕР!!!! | Снайперы в Minecraft",
+    url: "https://youtu.be/lZJOzJVdaU4",
+    preview: "https://i.ytimg.com/vi/lZJOzJVdaU4/maxresdefault.jpg",
+    category: "Снайперы",
+    description: "Этот Читер был настолько силен, что мне пришлось использовать секретное оружие, я не знал поможет ли мне оно? Он хотел победить, но он не знал что я использовал секретное оружие, а вот что за секретное оружие узнайте в ролике. Удачного просмотра!",
+    action: "redirect(3)"
+});
+}
+
+function secondChannel() {
+clearAllVideos();
+addVideo({
+	name: "Какой там цвет? Блин! Block Party на The Hive.",
+	url: "https://m.youtube.com/watch?v=AFyfXrOuZX0",
+	preview: "https://i.ytimg.com/vi/AFyfXrOuZX0/maxresdefault.jpg",
+	category: "BlockParty",
+	description: "Просто обычная игра в BlockParty на сервере <b>The Hive MC</b>. Видео снималось в целях проверки оптимизации Minecraft: Bedrock Edition",
+	action: "redirect(5)"
+});
+addVideo({
+	name: "Видео прямиком из 2010 года.... #42",
+	url: "https://m.youtube.com/watch?v=W4ZnoE_YE3A",
+	preview: "https://i.ytimg.com/vi_webp/W4ZnoE_YE3A/maxresdefault.webp",
+	category: "MurderMystery",
+	description: "Неудачное видео про то, как я играл в Murder Mystery на сервер <b>Hypixel</b>. После записи я увидел файл лога, который весил очень много.",
+	action: "redirect(6)"
+});
+addVideo({
+	name: "ХАЙПИКСЕЛЬ ВТИРАЕТ КАКУЮ-ТО ДИЧЬ! Hypixel Says",
+	url: "https://m.youtube.com/watch?v=-XfR1PO4lyw",
+	preview: "https://i.ytimg.com/vi/-XfR1PO4lyw/maxresdefault.jpg",
+	category: "HypixelSays",
+	description: "Обычная игра в режим Hypixel Says на сервере <b>Hypixel</b>.Толком не смог записать, игроков тупо не было.",
+	action: "redirect(7)"
+});
+}
+mainChannel();
