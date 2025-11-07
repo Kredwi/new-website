@@ -182,7 +182,7 @@ function mainChannel() {
 	addVideo({
     name: "Где скачивать моды?",
     url: "https://youtu.be/wb9SfsxcWHw",
-    preview: "https://img.plvideo.ru/images/fp-2024-import-cover/6698009c7a73c3a44a0b33fa/669c0efd9cea2a759511ca3a.jpg?w=720&webp=1",
+    preview: "img/previews/hdmi.jpg",
     category: "Туториал",
     description: "В этом видео, я вам расскажу про то, какие сайты использовал каждый, для того что бы скачивать моды в Майнкрафт. Все мы любим играть с модами, но у нас всегда появляется вопрос. Где скачать безопасно моды? В этом видео я про это расскажу.",
     action: "redirect(1)"
@@ -191,7 +191,7 @@ function mainChannel() {
 addVideo({
     name: "ЧТО СТРОИТ ЭТОТ ГЕНИЙ?! | BUILDBATTLE в Minecraft",
     url: "https://youtu.be/pgMv4uEAWSM",
-    preview: "https://img.plvideo.ru/images/fp-2024-import-cover/6698009c7a73c3a44a0b33fa/669991a19cea2a759511b9d0.webp?w=720&webp=1",
+    preview: "img/previews/bbinm.jpg",
     category: "BuildBattle",
     description: "Что строит этот гений?  Этот гений строит Постройку которую я не могу описать в описании, он слишком гениален что бы понять что эта постройка не похоже на то что нам нужно. Когда нибудь он поймет что надо было строить вот это а не это. А вот что он строил узнаете в ролике. Приятного просмотра.",
     action: "redirect(2)"
@@ -200,7 +200,7 @@ addVideo({
 addVideo({
     name: "ЭТО НЕ ПРОСТО СНАЙПЕР?? ДА ЭТО ЧИТЕР!!!! | Снайперы в Minecraft",
     url: "https://youtu.be/lZJOzJVdaU4",
-    preview: "https://img.plvideo.ru/images/fp-2024-import-cover/6698009c7a73c3a44a0b33fa/669991a19cea2a759511b9d1.jpg?w=720&webp=1",
+    preview: "img/previews/sinm.jpg",
     category: "Снайперы",
     description: "Этот Читер был настолько силен, что мне пришлось использовать секретное оружие, я не знал поможет ли мне оно? Он хотел победить, но он не знал что я использовал секретное оружие, а вот что за секретное оружие узнайте в ролике. Удачного просмотра!",
     action: "redirect(3)"
@@ -212,7 +212,7 @@ clearAllVideos();
 addVideo({
 	name: "Какой там цвет? Блин! Block Party на The Hive.",
 	url: "https://m.youtube.com/watch?v=AFyfXrOuZX0",
-	preview: "https://i.ytimg.com/vi/AFyfXrOuZX0/maxresdefault.jpg",
+	preview: "img/previews/bpinm.jpg",
 	category: "BlockParty",
 	description: "Просто обычная игра в BlockParty на сервере <b>The Hive MC</b>. Видео снималось в целях проверки оптимизации Minecraft: Bedrock Edition",
 	action: "redirect(5)"
@@ -220,7 +220,7 @@ addVideo({
 addVideo({
 	name: "Видео прямиком из 2010 года.... #42",
 	url: "https://m.youtube.com/watch?v=W4ZnoE_YE3A",
-	preview: "https://i.ytimg.com/vi_webp/W4ZnoE_YE3A/maxresdefault.webp",
+	preview: "img/previews/mmimh.jpg",
 	category: "MurderMystery",
 	description: "Неудачное видео про то, как я играл в Murder Mystery на сервер <b>Hypixel</b>. После записи я увидел файл лога, который весил очень много.",
 	action: "redirect(6)"
@@ -228,7 +228,7 @@ addVideo({
 addVideo({
 	name: "ХАЙПИКСЕЛЬ ВТИРАЕТ КАКУЮ-ТО ДИЧЬ! Hypixel Says",
 	url: "https://m.youtube.com/watch?v=-XfR1PO4lyw",
-	preview: "https://i.ytimg.com/vi/-XfR1PO4lyw/maxresdefault.jpg",
+	preview: "img/previews/hsinmh.jpg",
 	category: "HypixelSays",
 	description: "Обычная игра в режим Hypixel Says на сервере <b>Hypixel</b>.Толком не смог записать, игроков тупо не было.",
 	action: "redirect(7)"
