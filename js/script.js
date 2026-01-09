@@ -159,8 +159,10 @@ function createNotification(type, title, description = "", buttonText = "Ок", 
 			return console.error(`${key} not found`); // Отправляем ошибку, что данный тип уведомление не найден
 	}
 }
-createNotification("alert", "Уведомление от 11.08.2025", "У меня сломался ноутбук");
-
+createNotification("alert", "Новый дизайн на kredwi.ru!", "Kredwi изменил дизайн kredwi.ru", "Перейти", "openNewSite");
+function openNewSite() {
+	window.open("https://kredwi.ru", "_blank")
+}
 function addVideo(info) {
 	const template = `<div class="video">
 				<h4 class="video-name"><a class="video-name" href="${info.url}">${info.name.toLowerCase()}</a></h4>
@@ -234,4 +236,5 @@ addVideo({
 	action: "redirect(7)"
 });
 }
+
 mainChannel();
