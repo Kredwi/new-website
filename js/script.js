@@ -74,7 +74,8 @@ function redirect(e) {
 		video3: "https://youtu.be/lZJOzJVdaU4",
 		video5: "https://m.youtube.com/watch?v=AFyfXrOuZX0",
 		video6: "https://m.youtube.com/watch?v=W4ZnoE_YE3A",
-		video7: "https://m.youtube.com/watch?v=-XfR1PO4lyw"
+		video7: "https://m.youtube.com/watch?v=-XfR1PO4lyw",
+		video8: "https://kredwi.ru"
 	}
 	switch (e) {
 		case 1:
@@ -94,6 +95,8 @@ function redirect(e) {
 		break;
 		case 7:
 			window.open(url.video7, "_blank");
+		case 8:
+			window.open(url.video8, "_blank");
 			break;
 		default:
 			throw new Error("Error redirection");
@@ -159,10 +162,8 @@ function createNotification(type, title, description = "", buttonText = "Ок", 
 			return console.error(`${key} not found`); // Отправляем ошибку, что данный тип уведомление не найден
 	}
 }
-createNotification("alert", "Новый дизайн на kredwi.ru!", "Kredwi изменил дизайн kredwi.ru", "Перейти", "openNewSite");
-function openNewSite() {
-	window.open("https://kredwi.ru", "_blank")
-}
+createNotification("alert", "Новый дизайн на kredwi.ru!", "Kredwi изменил дизайн kredwi.ru", "Перейти", "redirect(8)");
+
 function addVideo(info) {
 	const template = `<div class="video">
 				<h4 class="video-name"><a class="video-name" href="${info.url}">${info.name.toLowerCase()}</a></h4>
@@ -238,3 +239,4 @@ addVideo({
 }
 
 mainChannel();
+
